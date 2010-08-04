@@ -1,0 +1,22 @@
+Till the plugin installer is done some manual work is needed.
+
+download and put the contents in /pluings
+
+run the following sql
+
+CREATE TABLE IF NOT EXISTS `gallery_images` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `image` varchar(255) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `slug` varchar(100) NOT NULL,
+  `description` text NOT NULL,
+  `keywords` varchar(255) NOT NULL,
+  `category_id` mediumint(9) NOT NULL DEFAULT '0',
+  `views` int(11) NOT NULL DEFAULT '0',
+  `active` tinyint(1) NOT NULL,
+  `created` datetime DEFAULT NULL,
+  `modified` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
+
+it uses the built in categories, so all you need to do is start adding images.
