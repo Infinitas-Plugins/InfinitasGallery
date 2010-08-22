@@ -20,21 +20,24 @@
 ?>
 <div class="table">
 	<?php
-		foreach ($images as $image){
-			?>
-				<div class="image">
-					<?php
-						echo $this->Html->image(
-							$image['Image']['image_path'],
-							array(
-								'width' => '100px',
-								'class' => 'img'
-							)
-						);
-					?>
-				</div>
-			<?php
+		foreach ($galleries as $gallery){
+			?><h3><?php echo $gallery['Category']['title']; ?></h3><?php
+			foreach($gallery['Image'] as $image){
+				echo $this->Html->link(
+					$this->Html->image(
+						$image['image_path'],
+						array(
+							'width' => '100px'
+						)
+					),
+					Router::url('/', true).'img/'.$image['image_path'],
+					array(
+						'class' => 'pirobox_'.str_replace('-', '', $gallery['Category']['slug']),
+						'escape' => false,
+						'title' => strip_tags($image['description'])
+					)
+				);
+			}
 		}
 	?>
 </div>
-<?php echo $this->element('pagination/navigation'); ?>

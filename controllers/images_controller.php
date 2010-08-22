@@ -7,19 +7,34 @@
 		public $name = 'Images';
 
 		public function index() {
-			$conditions = array();
-			if(isset($this->params['category'])){
-				$conditions['Category.slug'] = $this->params['category'];
-			}
+			$categories = isset($this->params['category'])
+				? $this->Image->Category->children($this->params['category'])
+				: $this->Image->Category->getActiveIds();
 
-			$this->paginate['Image'] = array(
-				'conditions' => $conditions,
-				'contain' => array(
-					'Category'
+			$this->Image->Category->bindModel(
+				array(
+					'hasMany' => array(
+						'Image' => array(
+							'className' => 'Gallery.Image',
+							'foreignKey' => 'category_id'
+						)
+					)
 				)
 			);
 
-			$this->set('images', $this->paginate());
+			$galleries = $this->Image->Category->find(
+				'all',
+				array(
+					'conditions' => array(
+						'Category.id' => Set::extract('/Category/id', $categories)
+					),
+					'contain' => array(
+						'Image'
+					)
+				)
+			);
+
+			$this->set(compact('galleries'));
 		}
 
 		public function admin_index() {
