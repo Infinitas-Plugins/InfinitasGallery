@@ -2,7 +2,6 @@
 	class GalleryAppController extends AppController{
 		public $name = 'GalleryAppController';
 
-
 		/**
 		 * components.
 		 *
