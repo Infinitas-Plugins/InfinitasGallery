@@ -1,6 +1,7 @@
 <?php
 	class GalleryEvents{
 		public function onSetupCache(){
+			Configure::load('gallery.config');
 			return array(
 				'name' => 'gallery',
 				'config' => array(
@@ -39,7 +40,7 @@
 				return false;
 			}
 
-			return '/gallery/css/pirobox';
+			return '/gallery/css/style_'.Configure::read('GalleryPlugin.style');
 		}
 
 		/**
