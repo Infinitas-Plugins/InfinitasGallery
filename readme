@@ -20,3 +20,6 @@ CREATE TABLE IF NOT EXISTS `gallery_images` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
 
 it uses the built in categories, so all you need to do is start adding images.
+
+You can change the look of the lightbox by adjusting the config options in the
+config.php file. At the moment, there are 5 different styles to choose from

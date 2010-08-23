@@ -18,7 +18,7 @@
      * @since         0.5a
      */
 ?>
-<div class="table">
+<div class="gallery">
 	<?php
 		foreach ($galleries as $gallery){
 			?><h3><?php echo $gallery['Category']['title']; ?></h3><?php
