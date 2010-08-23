@@ -21,5 +21,9 @@ CREATE TABLE IF NOT EXISTS `gallery_images` (
 
 it uses the built in categories, so all you need to do is start adding images.
 
+the gallery plugin uses the jQuery lightbox plugin "pirobox" available at
+http://www.pirolab.it/pirobox/ and was done by
+Diego Valobra (http://www.pirolab.it),(http://www.diegovalobra.com)
+
 You can change the look of the lightbox by adjusting the config options in the
 config.php file. At the moment, there are 5 different styles to choose from
