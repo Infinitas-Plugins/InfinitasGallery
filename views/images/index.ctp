@@ -21,16 +21,17 @@
 <div class="gallery">
 	<?php
 		foreach ($galleries as $gallery){
+			if(empty($gallery['Image'])){
+				continue;
+			}
+			
 			?><h3><?php echo $gallery['Category']['title']; ?></h3><?php
+			echo $gallery['Category']['description'];
+			
 			foreach($gallery['Image'] as $image){
 				echo $this->Html->link(
-					$this->Html->image(
-						$image['image_path'],
-						array(
-							'width' => '100px'
-						)
-					),
-					Router::url('/', true).'img/'.$image['image_path'],
+					$this->Html->image($image['image_path']),
+					Router::url('/', true).'img/'.$image['image_path'].'?width=600&height=400',
 					array(
 						'class' => 'pirobox_'.str_replace('-', '', $gallery['Category']['slug']),
 						'escape' => false,
