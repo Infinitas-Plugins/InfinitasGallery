@@ -40,7 +40,10 @@
 				return false;
 			}
 
-			return '/gallery/css/style_'.Configure::read('GalleryPlugin.style');
+			return array(
+				'/gallery/css/gallery',
+				'/gallery/css/style_'.Configure::read('GalleryPlugin.style')
+			);
 		}
 
 		/**
@@ -50,6 +53,6 @@
 		 * @return bool true if assets are neede, false if not
 		 */
 		private function __needAssets($data){			
-			return $data['plugin'] == 'gallery';
+			return $data['plugin'] == 'gallery' && !$data['admin'];
 		}
 	}
