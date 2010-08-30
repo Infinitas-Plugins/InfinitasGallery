@@ -39,11 +39,19 @@
 			?>
 				<div title="<?php echo __('File', true), ' :: ', $image['Image']['image']; ?>"class="image">
 					<?php
-						echo $this->Html->image(
-							$image['Image']['image_path'],
+						echo $this->Html->link(
+							$this->Html->image(
+								$image['Image']['image_path'],
+								array(
+									'width' => '100px',
+									'class' => 'img'
+								)
+							),
+							Router::url('/', true).'img/'.$image['Image']['image_path'].'?width=600&height=400',
 							array(
-								'height' => '35px',
-								'class' => 'img'
+								'class' => 'pirobox_'.str_replace('-', '', $image['Category']['slug']),
+								'escape' => false,
+								'title' => strip_tags($image['Image']['description'])
 							)
 						);
 					?>

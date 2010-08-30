@@ -1,4 +1,9 @@
-.gallery img{
+.gallery .images .admin_index .image{
+	width: 150px;
+	float: left;
+}
+
+.cntbody .gallery img{
 	width: 210px;
 	margin: 10px;
 }
