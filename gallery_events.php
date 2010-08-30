@@ -53,6 +53,6 @@
 		 * @return bool true if assets are neede, false if not
 		 */
 		private function __needAssets($data){			
-			return $data['plugin'] == 'gallery' && !$data['admin'];
+			return true; //$data['plugin'] == 'gallery' && !$data['admin'];
 		}
 	}
