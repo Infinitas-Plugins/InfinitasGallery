@@ -34,11 +34,14 @@
  */
 
 $(document).ready(function(){
-	$('.gallery').piroBox({
-		my_speed: 300,
-		bg_alpha: 0.5,
-		slideShow : false,
-		slideSpeed : 3,
-		close_all : '.piro_close,.piro_overlay'
-	});
+	$gallery = $('.gallery');
+	if($gallery){
+		$gallery.piroBox({
+			my_speed: 300,
+			bg_alpha: 0.5,
+			slideShow : false,
+			slideSpeed : 3,
+			close_all : '.piro_close,.piro_overlay'
+		});
+	}
 });
