@@ -32,9 +32,12 @@
     );
 	echo $this->Infinitas->adminIndexHead($filterOptions, $massActions);
 ?>
-<div class="table">
+<div class="dashboard">
 	<?php
-		echo $this->Form->input('all', array('label' => __('Select all', true), 'type' => 'checkbox'));
+		if(!empty($images)){
+			echo $this->Form->input('all', array('label' => __('Select all', true), 'type' => 'checkbox'));
+		}
+		
 		foreach ($images as $image){
 			?>
 				<div title="<?php echo __('File', true), ' :: ', $image['Image']['image']; ?>"class="image">
