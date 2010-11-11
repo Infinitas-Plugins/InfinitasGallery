@@ -10,6 +10,16 @@
 			);
 		}
 
+		public function onPluginRollCall(){
+			return array(
+				'name' => 'Gallery',
+				'description' => 'Build and manage image galleries',
+				'icon' => '/gallery/img/icon.png',
+				'author' => 'Infinitas',
+				'dashboard' => array('plugin' => 'gallery', 'controller' => 'images', 'action' => 'index'),
+			);
+		}
+
 		/**
 		 * The javascript to load into Infinitas
 		 *
