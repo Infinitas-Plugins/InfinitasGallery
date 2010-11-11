@@ -20,6 +20,14 @@
 			);
 		}
 
+		public function onAdminMenu(&$event){
+			$menu['main'] = array(
+				'Gallery' => array('controller' => 'images', 'action' => false),
+			);
+
+			return $menu;
+		}
+
 		/**
 		 * The javascript to load into Infinitas
 		 *
