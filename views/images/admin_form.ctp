@@ -19,26 +19,19 @@
      */
 
     echo $this->Form->create('Image', array('type' => 'file'));
-        echo $this->Infinitas->adminEditHead();
-        echo $this->Design->niceBox();
-        	?>
-				<div class="data">
-					<?php
-						echo $this->Form->input('id');
-						echo $this->Form->input('title', array('class' => 'title'));
-						echo $this->Infinitas->wysiwyg('Image.description');
-					?>
-				</div>
-				<div class="config">
-					<?php
-						echo $this->Design->niceBox();
-							echo $this->element('category_list', array('plugin' => 'categories'));
-							echo $this->Form->input('image', array('type' => 'file'));
-        				echo $this->Design->niceBoxEnd();
-					?>
-				</div>
-				<div class="clr">&nbsp;</div>
+        echo $this->Infinitas->adminEditHead(); ?>
+		<div class="data">
 			<?php
-        echo $this->Design->niceBoxEnd();
+				echo $this->Form->input('id');
+				echo $this->Form->input('title', array('class' => 'title'));
+				echo $this->Infinitas->wysiwyg('Image.description');
+			?>
+		</div>
+		<div class="config">
+			<?php
+				echo $this->element('category_list', array('plugin' => 'categories'));
+				echo $this->Form->input('image', array('type' => 'file'));
+			?>
+		</div><?php
     echo $this->Form->end();
 ?>
