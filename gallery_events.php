@@ -20,7 +20,7 @@
 			);
 		}
 
-		public function onAdminMenu(&$event){
+		public function onAdminMenu($event){
 			$menu['main'] = array(
 				'Gallery' => array('controller' => 'images', 'action' => false),
 			);
@@ -35,7 +35,7 @@
 		 * @param array $data controller params
 		 * @return mixed, string|array of js files. false if not needed
 		 */
-		public function onRequireJavascriptToLoad(&$event, $data){
+		public function onRequireJavascriptToLoad($event, $data){
 			if(!GalleryEvents::__needAssets($data)){
 				return false;
 			}
@@ -53,7 +53,7 @@
 		 * @param array $data controller params
 		 * @return mixed, string|array of css files. false if not needed
 		 */
-		public function onRequireCssToLoad(&$event, $data){			
+		public function onRequireCssToLoad($event, $data){			
 			if(!GalleryEvents::__needAssets($data)){				
 				return false;
 			}
