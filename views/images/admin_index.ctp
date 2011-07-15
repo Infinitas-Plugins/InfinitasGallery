@@ -60,7 +60,7 @@
 					?>
 					<div class="name"><?php echo $this->Html->link($this->Text->truncate($image['Image']['image'], 20), array('action' => 'edit', $image['Image']['id'])); ?></div>
 					<div class="ext"><span><?php echo __('Category', true), ':</span>', $image['Category']['title']; ?></div>
-					<div class="check"><?php echo $this->Form->checkbox($image['Image']['id']); ?></div>
+					<div class="check"><?php echo $this->Infinitas->massActionCheckBox($image); ?></div>
 				</div>
 			<?php
 		}
