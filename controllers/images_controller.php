@@ -22,11 +22,11 @@
 				)
 			);
 
-			$galleries = $this->Image->Category->find(
+			$galleries = $this->Image->GlobalCategory->find(
 				'all',
 				array(
 					'conditions' => array(
-						'Category.id' => Set::extract('/Category/id', $categories)
+						'GlobalCategory.id' => Set::extract('/GlobalCategory/id', $categories)
 					),
 					'contain' => array(
 						'Image'
