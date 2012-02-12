@@ -22,7 +22,7 @@
 
 		public function onAdminMenu($event){
 			$menu['main'] = array(
-				'Gallery' => array('controller' => 'images', 'action' => false),
+				'Gallery' => array('controller' => 'images', 'action' => 'index'),
 			);
 
 			return $menu;

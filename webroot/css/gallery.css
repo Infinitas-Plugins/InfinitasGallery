@@ -1,9 +1,15 @@
-.gallery .images .admin_index .image{
+.gallery.images.admin_index .image{
 	width: 150px;
 	float: left;
+}
+
+.gallery .input.checkbox {
+	clear: both;
+	width: 100%;
 }
 
 .cntbody .gallery img{
 	width: 210px;
 	margin: 10px;
+	float: left;
 }

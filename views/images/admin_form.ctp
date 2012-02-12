@@ -19,19 +19,21 @@
      */
 
     echo $this->Form->create('Image', array('type' => 'file'));
-        echo $this->Infinitas->adminEditHead(); ?>
-		<div class="data">
-			<?php
-				echo $this->Form->input('id');
-				echo $this->Form->input('title', array('class' => 'title'));
-				echo $this->Infinitas->wysiwyg('Image.description');
-			?>
-		</div>
-		<div class="config">
-			<?php
-				echo $this->element('category_list', array('plugin' => 'categories'));
-				echo $this->Form->input('image', array('type' => 'file'));
-			?>
-		</div><?php
+        echo $this->Infinitas->adminEditHead();
+			$tabs = array(
+				__d('contents', 'Content', true),
+				__d('contents', 'Author', true),
+				__d('cms', 'Other Data', true)
+			);
+
+			$content = array(
+				$this->element('content_form', array('plugin' => 'Contents', 'intro' => false)) . $this->Form->input('active') .
+					$this->Form->input('image', array('type' => 'file')),
+				$this->element('author_form', array('plugin' => 'Contents')),
+				implode('', array($this->Form->input('id'),
+					$this->Form->hidden('ContentConfig.id'), $this->element('meta_form', array('plugin' => 'Contents'))))
+			);
+
+			echo $this->Design->tabs($tabs, $content);
     echo $this->Form->end();
 ?>

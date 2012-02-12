@@ -52,14 +52,14 @@
 							),
 							Router::url('/', true).'img/'.$image['Image']['image_path'].'?width=600&height=400',
 							array(
-								'class' => 'pirobox_'.str_replace('-', '', $image['Category']['slug']),
+								'class' => 'pirobox_'.str_replace('-', '', $image['GlobalCategory']['slug']),
 								'escape' => false,
-								'title' => strip_tags($image['Image']['description'])
+								'title' => strip_tags($image['Image']['title'])
 							)
 						);
 					?>
 					<div class="name"><?php echo $this->Html->link($this->Text->truncate($image['Image']['image'], 20), array('action' => 'edit', $image['Image']['id'])); ?></div>
-					<div class="ext"><span><?php echo __('Category', true), ':</span>', $image['Category']['title']; ?></div>
+					<div class="ext"><?php echo sprintf('<span>%s:</span>%s', __d('contents', 'Category', true), $image['GlobalCategory']['title']); ?></div>
 					<div class="check"><?php echo $this->Infinitas->massActionCheckBox($image); ?></div>
 				</div>
 			<?php
