@@ -21,9 +21,9 @@
     echo $this->Form->create('Image', array('type' => 'file'));
         echo $this->Infinitas->adminEditHead();
 			$tabs = array(
-				__d('contents', 'Content', true),
-				__d('contents', 'Author', true),
-				__d('cms', 'Other Data', true)
+				__d('contents', 'Content'),
+				__d('contents', 'Author'),
+				__d('cms', 'Other Data')
 			);
 
 			$content = array(

@@ -35,12 +35,12 @@
 <div class="dashboard">
 	<?php
 		if(!empty($images)){
-			echo $this->Form->input('all', array('label' => __('Select all', true), 'type' => 'checkbox'));
+			echo $this->Form->input('all', array('label' => __('Select all'), 'type' => 'checkbox'));
 		}
 		
 		foreach ($images as $image){
 			?>
-				<div title="<?php echo __('File', true), ' :: ', $image['Image']['image']; ?>"class="image">
+				<div title="<?php echo __('File'), ' :: ', $image['Image']['image']; ?>"class="image">
 					<?php
 						echo $this->Html->link(
 							$this->Html->image(
@@ -59,7 +59,7 @@
 						);
 					?>
 					<div class="name"><?php echo $this->Html->link($this->Text->truncate($image['Image']['image'], 20), array('action' => 'edit', $image['Image']['id'])); ?></div>
-					<div class="ext"><?php echo sprintf('<span>%s:</span>%s', __d('contents', 'Category', true), $image['GlobalCategory']['title']); ?></div>
+					<div class="ext"><?php echo sprintf('<span>%s:</span>%s', __d('contents', 'Category'), $image['GlobalCategory']['title']); ?></div>
 					<div class="check"><?php echo $this->Infinitas->massActionCheckBox($image); ?></div>
 				</div>
 			<?php

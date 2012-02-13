@@ -4,8 +4,6 @@
 	 *
 	 */
 	class Image extends GalleryAppModel {
-		public $name = 'Image';
-
 		public $virtualFields = array(
 			'image_path' => 'CONCAT("content/gallery/", Image.image)'
 		);

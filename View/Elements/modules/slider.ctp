@@ -28,7 +28,7 @@
 							$image['Image']['title'],
 							$image['Image']['body'],
 							$this->Html->link(
-								__d('gallery', Configure::read('Website.read_more'), true),
+								__d('gallery', Configure::read('Website.read_more')),
 								array(
 									'plugin' => 'gallery',
 									'controller' => 'galleries',

@@ -38,7 +38,7 @@
 				}
 			}
 			else{
-				echo __('There are no images in this gallery yet. Come back soon', true);
+				echo __('There are no images in this gallery yet. Come back soon');
 			}
 		}
 	?>

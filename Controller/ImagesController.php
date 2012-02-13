@@ -3,9 +3,7 @@
 	 *
 	 *
 	 */
-	class ImagesController extends GalleryAppController{
-		public $name = 'Images';
-
+	class ImagesController extends GalleryAppController {
 		public function index() {
 			$categories = isset($this->params['category'])
 				? $this->Image->Category->children($this->params['category'])

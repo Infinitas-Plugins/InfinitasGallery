@@ -1,7 +1,5 @@
 <?php
-	class GalleryAppController extends AppController{
-		public $name = 'GalleryAppController';
-
+	class GalleryAppController extends AppController {
 		/**
 		 * components.
 		 *

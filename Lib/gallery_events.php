@@ -1,7 +1,7 @@
 <?php
 	class GalleryEvents{
 		public function onSetupCache(){
-			Configure::load('gallery.config');
+			Configure::load('Gallery.config');
 			return array(
 				'name' => 'gallery',
 				'config' => array(
