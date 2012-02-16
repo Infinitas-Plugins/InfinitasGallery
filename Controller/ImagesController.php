@@ -5,8 +5,8 @@
 	 */
 	class ImagesController extends GalleryAppController {
 		public function index() {
-			$categories = isset($this->params['category'])
-				? $this->Image->Category->children($this->params['category'])
+			$categories = isset($this->request->params['category'])
+				? $this->Image->Category->children($this->request->params['category'])
 				: $this->Image->Category->getActiveIds();
 
 			$this->Image->Category->bindModel(
