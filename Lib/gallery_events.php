@@ -41,8 +41,8 @@
 			}
 			
 			return array(
-				'/gallery/js/pirobox',
-				'/gallery/js/gallery'
+				'Gallery.pirobox',
+				'Gallery.gallery'
 			);
 		}
 
@@ -59,8 +59,8 @@
 			}
 
 			return array(
-				'/gallery/css/gallery',
-				'/gallery/css/style_'.Configure::read('GalleryPlugin.style')
+				'Gallery.gallery',
+				'Gallery.style_'.Configure::read('GalleryPlugin.style')
 			);
 		}
 
