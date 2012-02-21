@@ -45,7 +45,7 @@
 			$filterOptions['fields'] = array(
 				'title',
 				'description',
-				'category_id' => $this->Image->Category->generateTreeList(),
+				'category_id' => $this->Image->GlobalContent->GlobalCategory->generateTreeList(),
 				'active' => Configure::read('CORE.active_options')
 			);
 			$this->set(compact('images', 'filterOptions'));

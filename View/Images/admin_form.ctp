@@ -27,11 +27,11 @@
 			);
 
 			$content = array(
-				$this->element('content_form', array('plugin' => 'Contents', 'intro' => false)) . $this->Form->input('active') .
-					$this->Form->input('image', array('type' => 'file')),
-				$this->element('author_form', array('plugin' => 'Contents')),
+				$this->element('Contents.content_form', array('intro' => false)) . $this->Form->input('active') .
+					$this->element('Filemanager.file_upload', array('fieldName' => 'image')),
+				$this->element('Contents.author_form'),
 				implode('', array($this->Form->input('id'),
-					$this->Form->hidden('ContentConfig.id'), $this->element('meta_form', array('plugin' => 'Contents'))))
+					$this->Form->hidden('ContentConfig.id'), $this->element('Contents.meta_form')))
 			);
 
 			echo $this->Design->tabs($tabs, $content);

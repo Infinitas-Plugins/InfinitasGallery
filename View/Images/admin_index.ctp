@@ -37,9 +37,8 @@
 		if(!empty($images)){
 			echo $this->Form->input('all', array('label' => __('Select all'), 'type' => 'checkbox'));
 		}
-		
-		foreach ($images as $image){
-			?>
+		echo '<div class="images">';
+			foreach ($images as $image) { ?>
 				<div title="<?php echo __('File'), ' :: ', $image['Image']['image']; ?>"class="image">
 					<?php
 						echo $this->Html->link(
@@ -50,9 +49,9 @@
 									'class' => 'img'
 								)
 							),
-							Router::url('/', true).'img/'.$image['Image']['image_path'].'?width=600&height=400',
+							$image['Image']['image_path'],
 							array(
-								'class' => 'pirobox_'.str_replace('-', '', $image['GlobalCategory']['slug']),
+								'class' => 'thickbox',
 								'escape' => false,
 								'title' => strip_tags($image['Image']['title'])
 							)
@@ -61,9 +60,9 @@
 					<div class="name"><?php echo $this->Html->link($this->Text->truncate($image['Image']['image'], 20), array('action' => 'edit', $image['Image']['id'])); ?></div>
 					<div class="ext"><?php echo sprintf('<span>%s:</span>%s', __d('contents', 'Category'), $image['GlobalCategory']['title']); ?></div>
 					<div class="check"><?php echo $this->Infinitas->massActionCheckBox($image); ?></div>
-				</div>
-			<?php
-		}
+				</div> <?php
+			}
+		echo '</div>';
         echo $this->Form->end(); ?>
 </div>
 <?php echo $this->element('pagination/admin/navigation'); ?>

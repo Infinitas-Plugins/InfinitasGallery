@@ -5,7 +5,7 @@
 	 */
 	class Image extends GalleryAppModel {
 		public $virtualFields = array(
-			'image_path' => 'CONCAT("content/gallery/", Image.image)'
+			'image_path' => 'CONCAT("/files/image/image/", Image.dir, "/", Image.image)'
 		);
 
 		public $contentable = true;

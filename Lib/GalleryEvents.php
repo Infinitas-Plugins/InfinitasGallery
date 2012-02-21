@@ -1,5 +1,5 @@
 <?php
-	class GalleryEvents{
+	class GalleryEvents {
 		public function onSetupCache(){
 			Configure::load('Gallery.config');
 			return array(
