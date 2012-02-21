@@ -39,27 +39,30 @@
 		}
 		echo '<div class="images">';
 			foreach ($images as $image) { ?>
-				<div title="<?php echo __('File'), ' :: ', $image['Image']['image']; ?>"class="image">
+				<div class="image">
+					<span><?php echo $image['Image']['title']; ?></span>
 					<?php
 						echo $this->Html->link(
 							$this->Html->image(
 								$image['Image']['image_path'],
 								array(
-									'width' => '100px',
+									'width' => '150px',
 									'class' => 'img'
 								)
 							),
 							$image['Image']['image_path'],
 							array(
 								'class' => 'thickbox',
-								'escape' => false,
-								'title' => strip_tags($image['Image']['title'])
+								'escape' => false
 							)
 						);
 					?>
-					<div class="name"><?php echo $this->Html->link($this->Text->truncate($image['Image']['image'], 20), array('action' => 'edit', $image['Image']['id'])); ?></div>
-					<div class="ext"><?php echo sprintf('<span>%s:</span>%s', __d('contents', 'Category'), $image['GlobalCategory']['title']); ?></div>
-					<div class="check"><?php echo $this->Infinitas->massActionCheckBox($image); ?></div>
+					<div class="name">
+						<?php 
+							echo $this->Infinitas->massActionCheckBox($image) . $this->Html->link($this->Text->truncate($image['Image']['image'], 20), array('action' => 'edit', $image['Image']['id'])); 
+						?>
+					</div>
+					<span class="info" title="<?php echo __('File'), ' :: ', $image['Image']['image']; ?>"></span>
 				</div> <?php
 			}
 		echo '</div>';

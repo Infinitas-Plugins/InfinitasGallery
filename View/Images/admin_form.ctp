@@ -30,8 +30,7 @@
 				$this->element('Contents.content_form', array('intro' => false)) . $this->Form->input('active') .
 					$this->element('Filemanager.file_upload', array('fieldName' => 'image')),
 				$this->element('Contents.author_form'),
-				implode('', array($this->Form->input('id'),
-					$this->Form->hidden('ContentConfig.id'), $this->element('Contents.meta_form')))
+				$this->Form->input('id') . $this->Form->hidden('ContentConfig.id') . $this->element('Contents.meta_form')
 			);
 
 			echo $this->Design->tabs($tabs, $content);
