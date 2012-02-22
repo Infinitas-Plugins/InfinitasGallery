@@ -36,10 +36,10 @@
 		}
 
 		public function admin_index() {
-			$this->paginate = array(
+			$this->Paginator->settings = array(
 				'GlobalCategory.title' => 'asc'
 			);
-			$images = $this->paginate(null, $this->Filter->filter);
+			$images = $this->Paginator->paginate(null, $this->Filter->filter);
 
 			$filterOptions = $this->Filter->filterOptions;
 			$filterOptions['fields'] = array(
