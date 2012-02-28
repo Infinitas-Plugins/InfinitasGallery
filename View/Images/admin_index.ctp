@@ -64,6 +64,7 @@
 					</div>
 					<div class="info">
 						<span><?php echo $this->Locked->display($image); ?></span>
+						<span><?php echo $this->Infinitas->status($image['Image']['active'], $image['Image']['id']); ?></span>
 						<span class="help" title="<?php echo __('File'), ' :: ', $image['Image']['image']; ?>"></span>
 					</div>
 				</div> <?php
