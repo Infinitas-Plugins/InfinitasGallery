@@ -27,13 +27,18 @@
 .gallery.images.admin_index div.name {
 	text-align: left;
 }
-.gallery.images.admin_index span.info {
-	background-image: url('/gallery/img/info.png');
+.gallery.images.admin_index div.info {
+	display: block;
+	float: right;
+}
+.gallery.images.admin_index div.info span {
 	width: 16px;
 	height: 16px;
-	float: right;
-	right: 5px;
-	bottom:5px;
+	float: left;
+	margin-left: 10px;
+}
+.gallery.images.admin_index span.help {
+	background-image: url('/gallery/img/info.png');
 }
 
 .gallery .input.checkbox {

@@ -62,7 +62,10 @@
 							echo $this->Infinitas->massActionCheckBox($image) . $this->Html->link($this->Text->truncate($image['Image']['image'], 20), array('action' => 'edit', $image['Image']['id'])); 
 						?>
 					</div>
-					<span class="info" title="<?php echo __('File'), ' :: ', $image['Image']['image']; ?>"></span>
+					<div class="info">
+						<span><?php echo $this->Locked->display($image); ?></span>
+						<span class="help" title="<?php echo __('File'), ' :: ', $image['Image']['image']; ?>"></span>
+					</div>
 				</div> <?php
 			}
 		echo '</div>';
