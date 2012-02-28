@@ -9,6 +9,8 @@
 		);
 
 		public $contentable = true;
+		
+		public $lockable = true;
 
 		public $actsAs = array(
 			'Filemanager.Upload' => array(
