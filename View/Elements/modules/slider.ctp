@@ -5,45 +5,18 @@
 			return false;
 		}
 	}
-?>
-<div id="stage-wrap">
-	<div id="stage">
-		<div class="anythingSlider">
-			<div class="wrapper">
-				<?php
-					$out = array();
-					foreach($galleryImages as $image) {
-						$tmp = sprintf(
-							'<div class="slide-feature round-all fl">%s</div>',
-							$this->Html->image(
-								$image['Image']['image_path'],
-								array(
-									'width' => '596'
-								)
-							)
-						);
-
-						$tmp .= sprintf(
-							'<div class="slide-content fr"><h2>%s</h2>%s%s</div>',
-							$image['Image']['title'],
-							$image['Image']['body'],
-							$this->Html->link(
-								__d('gallery', Configure::read('Website.read_more')),
-								array(
-									'plugin' => 'gallery',
-									'controller' => 'galleries',
-									'action' => 'view',
-									$image['Image']['id']
-								)
-							)
-						);
-
-						$out[] = $tmp;
-					}
-
-					echo $this->Design->arrayToList($out);
-				?>
-			</div>
-		</div>
-	</div>
-</div>
+	
+	$out = array();
+	$counter = 1;
+	foreach($galleryImages as &$image) {
+		$image['Image']['full_image'] = $this->Html->image(
+			$image['Image']['image_path'],
+			array(
+				'width' => '596'
+			)
+		);
+		
+		$image['Image']['even'] = $counter++ % 2;
+	}
+	
+	echo $this->renderTemplate($galleryImages[0]['Layout']['html'], array('galleryImages' => $galleryImages));
