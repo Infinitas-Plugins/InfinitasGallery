@@ -1,6 +1,6 @@
 <?php
 	if(empty($galleryImages)) {
-		$galleryImages = ClassRegistry::init('Gallery.Image')->find('all');
+		$galleryImages = ClassRegistry::init('Gallery.Image')->find('active');
 		if(empty($galleryImages)) {
 			return false;
 		}
