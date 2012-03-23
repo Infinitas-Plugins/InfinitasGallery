@@ -7,6 +7,10 @@
 		public $virtualFields = array(
 			'image_path' => 'CONCAT("/files/image/image/", Image.dir, "/", Image.image)'
 		);
+		
+		public $findMethods = array(
+			'gallery' => true
+		);
 
 		public $contentable = true;
 		
@@ -25,4 +29,24 @@
 				)
 			)
 	    );
+		
+		protected function _findGallery($state, $query, $results = array()) {
+			if ($state === 'before') {
+				if(empty($query[0])) {
+					throw new Exception('No gallery selected');
+				}
+				
+				$query['conditions'] = array_merge(
+					(array)$query['conditions'],
+					array(
+						'GlobalCategoryContent.slug' => $query[0]
+					)
+				);
+				unset($query[0]);
+				
+				return $query;
+			}
+
+			return $results;
+		}
 	}
