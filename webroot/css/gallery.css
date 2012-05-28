@@ -1,6 +1,8 @@
 .gallery.images.admin_index .image {
 	float: left;
 	text-align: center;
+	height: 200px;
+	width: 157px;
 	
 	border: 1px solid #D6D6D6;
 	padding: 5px;
@@ -16,7 +18,10 @@
 	border-radius: 3px;
 }
 
-
+.gallery.images .image>a {
+	height: 110px;
+	display: block;
+}
 .gallery.images.admin_index .image>span {
 	clear: both;
 	margin:auto;

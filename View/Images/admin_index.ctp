@@ -40,7 +40,7 @@
 		echo '<div class="images">';
 			foreach ($images as $image) { ?>
 				<div class="image">
-					<span><?php echo $image['Image']['title']; ?></span>
+					<span><?php echo String::truncate($image['Image']['title'], 25); ?></span>
 					<?php
 						echo $this->Html->link(
 							$this->Html->image(
@@ -53,7 +53,8 @@
 							$image['Image']['image_path'],
 							array(
 								'class' => 'thickbox',
-								'escape' => false
+								'escape' => false,
+								'title' => sprintf(' :: %s', $image['Image']['title'])
 							)
 						);
 					?>
