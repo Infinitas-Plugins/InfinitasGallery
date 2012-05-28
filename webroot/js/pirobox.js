@@ -201,7 +201,7 @@
 				}
 				main_cont.addClass('loading');
 				var img = new Image();
-				debug(img);
+				
 				img.onerror = function (){
 					var main_cont_h = $(main_cont).height();
 					main_cont.css({
