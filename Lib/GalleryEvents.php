@@ -1,6 +1,6 @@
 <?php
 	class GalleryEvents {
-		public function onSetupCache(){
+		public function onSetupCache() {
 			Configure::load('Gallery.config');
 			return array(
 				'name' => 'gallery',
@@ -10,19 +10,20 @@
 			);
 		}
 
-		public function onPluginRollCall(){
+		public function onPluginRollCall() {
 			return array(
 				'name' => 'Gallery',
 				'description' => 'Build and manage image galleries',
 				'icon' => '/gallery/img/icon.png',
 				'author' => 'Infinitas',
-				'dashboard' => array('plugin' => 'gallery', 'controller' => 'images', 'action' => 'index'),
+				'dashboard' => array('plugin' => 'gallery', 'controller' => 'images', 'action' => 'dashboard'),
 			);
 		}
 
-		public function onAdminMenu($event){
+		public function onAdminMenu($event) {
 			$menu['main'] = array(
-				'Gallery' => array('controller' => 'images', 'action' => 'index'),
+				'Dashboard' => array('plugin' => 'gallery', 'controller' => 'images', 'action' => 'dashboard'),
+				'Gallery' => array('plugin' => 'gallery', 'controller' => 'images', 'action' => 'index'),
 			);
 
 			return $menu;
@@ -35,8 +36,8 @@
 		 * @param array $data controller params
 		 * @return mixed, string|array of js files. false if not needed
 		 */
-		public function onRequireJavascriptToLoad($event, $data){
-			if(!GalleryEvents::__needAssets($data)){
+		public function onRequireJavascriptToLoad($event, $data) {
+			if(!GalleryEvents::__needAssets($data)) {
 				return false;
 			}
 			
@@ -53,8 +54,8 @@
 		 * @param array $data controller params
 		 * @return mixed, string|array of css files. false if not needed
 		 */
-		public function onRequireCssToLoad($event, $data){			
-			if(!GalleryEvents::__needAssets($data)){				
+		public function onRequireCssToLoad($event, $data) {			
+			if(!GalleryEvents::__needAssets($data)) {				
 				return false;
 			}
 
@@ -70,7 +71,7 @@
 		 * @param array $data params from controller
 		 * @return bool true if assets are neede, false if not
 		 */
-		private function __needAssets($data){			
+		private function __needAssets($data) {			
 			return true; //$data['plugin'] == 'gallery' && !$data['admin'];
 		}
 	}

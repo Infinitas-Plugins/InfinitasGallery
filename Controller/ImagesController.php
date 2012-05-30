@@ -34,6 +34,19 @@
 
 			$this->set(compact('galleries'));
 		}
+		
+		public function admin_dashboard() {
+			$globalImages = $this->{$this->modelClass}->find(
+				'all',
+				array(
+					'group' => array(
+						'GlobalContent.global_category_id'
+					)
+				)
+			);
+			
+			$this->set(compact('globalImages'));
+		}
 
 		public function admin_index() {
 			$this->Paginator->settings = array(

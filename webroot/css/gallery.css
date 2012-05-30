@@ -1,4 +1,4 @@
-.gallery.images.admin_index .image {
+.gallery.images .image {
 	float: left;
 	text-align: center;
 	height: 200px;
@@ -18,31 +18,35 @@
 	border-radius: 3px;
 }
 
+.gallery.images.admin_dashboard .image {
+	height: 135px;
+}
+
 .gallery.images .image>a {
 	height: 110px;
 	display: block;
 }
-.gallery.images.admin_index .image>span {
+.gallery.images .image>span {
 	clear: both;
 	margin:auto;
 	display: block;
 	font-weight: bold;
 }
 
-.gallery.images.admin_index div.name {
+.gallery.images div.name {
 	text-align: left;
 }
-.gallery.images.admin_index div.info {
+.gallery.images div.info {
 	display: block;
 	float: right;
 }
-.gallery.images.admin_index div.info span {
+.gallery.images div.info span {
 	width: 16px;
 	height: 16px;
 	float: left;
 	margin-left: 10px;
 }
-.gallery.images.admin_index span.help {
+.gallery.images span.help {
 	background-image: url('/gallery/img/info.png');
 }
 
