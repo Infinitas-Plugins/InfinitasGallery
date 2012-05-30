@@ -3,11 +3,7 @@
 	 *
 	 *
 	 */
-	class Image extends GalleryAppModel {
-		public $virtualFields = array(
-			'image_path' => 'CONCAT("/files/image/image/", Image.dir, "/", Image.image)'
-		);
-		
+	class Image extends GalleryAppModel {		
 		public $findMethods = array(
 			'gallery' => true
 		);
@@ -15,20 +11,6 @@
 		public $contentable = true;
 		
 		public $lockable = true;
-
-		public $actsAs = array(
-			'Filemanager.Upload' => array(
-				'image' => array(
-					'thumbnailSizes' => array(
-						'jumbo' => '1600l',
-						'large' => '1000l',
-						'medium' => '600l',
-						'small' => '200l',
-						'thumb' => '50l'
-					)
-				)
-			)
-	    );
 		
 		protected function _findGallery($state, $query, $results = array()) {
 			if ($state === 'before') {

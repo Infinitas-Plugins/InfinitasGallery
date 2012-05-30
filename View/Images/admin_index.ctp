@@ -44,13 +44,13 @@
 					<?php
 						echo $this->Html->link(
 							$this->Html->image(
-								$image['Image']['image_path'],
+								$image['Image']['content_image_path_small'],
 								array(
 									'width' => '150px',
 									'class' => 'img'
 								)
 							),
-							$image['Image']['image_path'],
+							$image['Image']['content_image_path_full'],
 							array(
 								'class' => 'thickbox',
 								'escape' => false,
