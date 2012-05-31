@@ -9,8 +9,8 @@
 	$out = array();
 	$counter = 1;
 	foreach($galleryImages as &$image) {
-		$image['Image']['full_image'] = $this->Html->image(
-			$image['Image']['image_path'],
+		$image['Image']['content_image_path_full'] = $this->Html->image(
+			$image['Image']['content_image_path_full'],
 			array(
 				'width' => '596'
 			)
