@@ -20,12 +20,12 @@
 ?>
 <div class="gallery">
 	<?php
-		foreach ($galleries as $gallery){
+		foreach ($galleries as $gallery) {
 			?><h3><?php echo $gallery['Category']['title']; ?></h3><?php
 			echo $gallery['Category']['description'];
 
-			if(!empty($gallery['Image'])){
-				foreach($gallery['Image'] as $image){
+			if(!empty($gallery['Image'])) {
+				foreach($gallery['Image'] as $image) {
 					echo $this->Html->link(
 						$this->Html->image($image['image_path']),
 						Router::url('/', true).'img/'.$image['image_path'].'?width=600&height=400',

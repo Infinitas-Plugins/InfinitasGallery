@@ -34,7 +34,7 @@
 ?>
 <div class="dashboard">
 	<?php
-		if(!empty($images)){
+		if(!empty($images)) {
 			echo $this->Form->input('all', array('label' => __('Select all'), 'type' => 'checkbox'));
 		}
 		echo '<div class="images">';
