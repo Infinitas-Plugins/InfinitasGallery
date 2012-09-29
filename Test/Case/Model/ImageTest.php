@@ -14,15 +14,15 @@ class ImageTest extends CakeTestCase {
  */
 	public $fixtures = array(
 		'plugin.gallery.image',
-		'plugin.gallery.global_content',
-		'plugin.gallery.global_layout',
-		'plugin.gallery.theme',
-		'plugin.gallery.global_category',
-		'plugin.gallery.group',
-		'plugin.gallery.view_counter_view',
-		'plugin.gallery.user',
-		'plugin.gallery.global_tagged',
-		'plugin.gallery.global_tag'
+		'plugin.themes.theme',
+		'plugin.users.group',
+		'plugin.users.user',
+		'plugin.view_counter.view_counter_view',
+		'plugin.contents.global_tagged',
+		'plugin.contents.global_tag',
+		'plugin.contents.global_category',
+		'plugin.contents.global_content',
+		'plugin.contents.global_layout',
 	);
 
 /**
