@@ -23,6 +23,8 @@ class ImageTest extends CakeTestCase {
 		'plugin.contents.global_category',
 		'plugin.contents.global_content',
 		'plugin.contents.global_layout',
+		'plugin.locks.lock',
+		'plugin.management.ticket',
 	);
 
 /**

@@ -8,6 +8,8 @@
 class ImageFixture extends CakeTestFixture {
 	public $name = 'Image';
 
+	public $table = 'gallery_images';
+
 	public $fields = array(
 		'id' => array('type' => 'string', 'null' => false, 'default' => null, 'length' => 36, 'key' => 'primary', 'collate' => 'utf8_general_ci', 'charset' => 'utf8'),
 		'image' => array('type' => 'string', 'null' => false, 'default' => null, 'collate' => 'utf8_general_ci', 'charset' => 'utf8'),
