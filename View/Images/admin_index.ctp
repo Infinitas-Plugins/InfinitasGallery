@@ -18,19 +18,15 @@
      * @since         0.5a
      */
 
-    echo $this->Form->create('Image', array('url' => array('action' => 'mass')));
-
-    $massActions = $this->Infinitas->massActionButtons(
-        array(
-            'add',
-            'edit',
-            'copy', // @todo overwrite and copy file
-            'move',
-            'toggle',
-            'delete' // @todo hard delete should unlink() file.
-        )
-    );
-	echo $this->Infinitas->adminIndexHead($filterOptions, $massActions);
+    echo $this->Form->create('Image', array('action' => 'mass'));
+	echo $this->Infinitas->adminIndexHead($filterOptions, array(
+		'add',
+		'edit',
+		'copy', // @todo overwrite and copy file
+		'move',
+		'toggle',
+		'delete' // @todo hard delete should unlink() file.
+	));
 ?>
 <div class="dashboard">
 	<?php
@@ -59,8 +55,8 @@
 						);
 					?>
 					<div class="name">
-						<?php 
-							echo $this->Infinitas->massActionCheckBox($image) . $this->Html->link($this->Text->truncate($image['Image']['image'], 20), array('action' => 'edit', $image['Image']['id'])); 
+						<?php
+							echo $this->Infinitas->massActionCheckBox($image) . $this->Html->link($this->Text->truncate($image['Image']['image'], 20), array('action' => 'edit', $image['Image']['id']));
 						?>
 					</div>
 					<div class="info">
@@ -73,4 +69,5 @@
 		echo '</div>';
         echo $this->Form->end(); ?>
 </div>
-<?php echo $this->element('pagination/admin/navigation'); ?>
+<?php
+	echo $this->element('pagination/admin/navigation');
