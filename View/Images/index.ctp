@@ -21,25 +21,25 @@
 <div class="gallery">
 	<?php
 		foreach ($galleries as $gallery) {
-			?><h3><?php echo $gallery['Category']['title']; ?></h3><?php
-			echo $gallery['Category']['description'];
+			echo $this->Html->tag('h3', $this->Html->link($gallery['GlobalCategory']['title'], array(
+				'slug' => $gallery['GlobalCategoryContent']['slug']
+			)));
 
-			if(!empty($gallery['Image'])) {
-				foreach($gallery['Image'] as $image) {
-					echo $this->Html->link(
-						$this->Html->image($image['image_path']),
-						Router::url('/', true).'img/'.$image['image_path'].'?width=600&height=400',
-						array(
-							'class' => 'pirobox_'.str_replace('-', '', $gallery['Category']['slug']),
-							'escape' => false,
-							'title' => strip_tags($image['description'])
-						)
-					);
-				}
-			}
-			else{
+			if(empty($gallery['Image'])) {
 				echo __('There are no images in this gallery yet. Come back soon');
+				continue;
 			}
+
+			
+			echo $this->Html->link(
+				$this->Html->image($gallery['Image']['content_image_path_small']),
+				Router::url($gallery['Image']['content_image_path_full'], true) . '?width=600&height=400',
+				array(
+					'class' => 'pirobox_' . str_replace('-', '', $gallery['GlobalCategory']['slug']),
+					'escape' => false,
+					'title' => strip_tags($gallery['Image']['body'])
+				)
+			);
 		}
 	?>
 </div>
